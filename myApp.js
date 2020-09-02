@@ -5,6 +5,7 @@
 
 /** # MONGOOSE SETUP #
 /*  ================== */
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 /** 1) Install & Set up mongoose */

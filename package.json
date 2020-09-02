@@ -11,9 +11,6 @@
 		"express": "^4.12.4",
 		"mongoose": "^5.9.20"
 	},
-	"engines": {
-		"node": "4.4.5"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://hyperdev.com/#!/project/welcome-project"

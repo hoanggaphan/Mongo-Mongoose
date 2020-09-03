@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 /** # SCHEMAS and MODELS #
 /*  ====================== */
 const personSchema = new Schema({
-  name: {type: String, required: true},
+  name: { type: String, required: true },
   age: Number,
   favoriteFoods: [String]
 });
@@ -86,8 +86,15 @@ const Person = mongoose.model("Person", personSchema);
 // });
 
 var createAndSavePerson = function(done) {
-  
-  done(null /*, data*/);
+  const hoangGaPhan = new Person({ 
+    name: "hoang ga phan", 
+    age: 22, 
+    favoriteFoods: ["mì", "bánh gạo"] 
+  });
+  hoangGaPhan.save((err, data) => {
+    if(err) return console.error(err);
+    done(null, data);
+  });
 
 };
 

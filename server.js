@@ -96,6 +96,7 @@ router.get('/create-and-save-person', function(req, res, next) {
 
 var createPeople = require('./myApp.js').createManyPeople;
 router.post('/create-many-people', function(req, res, next) {
+  console.log(req.body);
   Person.remove({}, function(err) {
     if(err) { return (next(err)); }
     // in case of incorrect function use wait timeout then respond

@@ -95,7 +95,6 @@ var createAndSavePerson = function(done) {
     if(err) return console.error(err);
     done(null, data);
   });
-
 };
 
 /** 4) Create many People with `Model.create()` */
@@ -108,9 +107,10 @@ var createAndSavePerson = function(done) {
 // 'arrayOfPeople'.
 
 var createManyPeople = function(arrayOfPeople, done) {
-    
-    done(null/*, data*/);
-    
+  Person.create(arrayOfPeople, (err, data) => {
+    if(err) return console.error(err);
+    done(null, data);
+  });
 };
 
 /** # C[R]UD part II - READ #

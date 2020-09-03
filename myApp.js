@@ -9,6 +9,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 /** 1) Install & Set up mongoose */
+const Schema = mongoose.Schema;
 
 // Add mongodb and mongoose to the project's package.json. Then require 
 // mongoose. Store your Mongo Atlas database URI in the private .env file 
@@ -19,6 +20,11 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 /** # SCHEMAS and MODELS #
 /*  ====================== */
+const personSchema = new Schema({
+  name: {type: String, required: true},
+  age: Number,
+  favoriteFoods: [String]
+});
 
 /** 2) Create a 'Person' Model */
 
@@ -42,7 +48,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 // <Your code here >
 
-var Person /* = <Your Model> */
+const Person = mongoose.model("person", personSchema);
 
 // **Note**: Glitch is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
